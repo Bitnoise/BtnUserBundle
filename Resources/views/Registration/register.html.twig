@@ -1,0 +1,16 @@
+    <form action="{{ path('auth') }}" method="POST" class="fos_user_registration_register" id="registerForm">
+        <fieldset>
+        <div class="line required email">
+            {{ form_row(form.email, { 'attr': {'placeholder': 'Email' }}) }}
+        </div>
+        <div class="line required password">
+            {{ form_row(form.plainPassword.first) }}
+        </div>
+        <div class="line required password repeated_password">
+            {{ form_row(form.plainPassword.second) }}
+        </div>
+
+        <input type="submit" id="_submit" name="_submit" value="Zarejestruj się" />
+        {{ form_rest(form) }}
+        </fieldset>
+    </form>

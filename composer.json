@@ -1,0 +1,24 @@
+{
+    "name": "bitnoise/user-bundle",
+    "type": "symfony-bundle",
+    "description": "",
+    "keywords": [ "bitnoise", "utilities", "user"],
+    "homepage": "https://github.com/Bitnoise/BtnUserBundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Bitnoise Team",
+            "homepage": "http://www.bitnoi.se/",
+            "email": "labs@bitnoi.se"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "Btn\\UserBundle": "" }
+    },
+    "target-dir": "Btn/UserBundle"
+}

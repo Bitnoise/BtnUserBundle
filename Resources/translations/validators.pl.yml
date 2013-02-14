@@ -1,0 +1,10 @@
+'This value should be the user current password': 'Obecne hasło musi być poprawne.'
+
+fos_user:
+    username:
+        already_used: Ten adres email jest już zajęty
+        blank: Adres email jest wymagany
+
+register:
+    terms:
+        required: 'Akceptacja regulaminu jest wymagana.'

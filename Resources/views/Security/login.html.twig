@@ -1,0 +1,20 @@
+a
+{% if error %}
+    <p class="msg_error">{{ error|trans({}, 'FOSUserBundle') }}</p>
+{% endif %}
+
+ <form action="{{ path("fos_user_security_check") }}" class="form_default form_horizontal" method="post" novalidate>
+  <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+  <fieldset>
+    <div class="line">
+      <label>E-mail</label>
+      <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="email"/>
+    </div>
+    <div class="line">
+      <label>Password</label>
+      <input type="password" id="password" name="_password" placeholder="Password"/>
+    </div>
+    <button class="btn primary" id="_submit" name="_submit" type="submit">Submit</button>
+</fieldset>
+</form>
