@@ -1,20 +1,45 @@
-a
-{% if error %}
-    <p class="msg_error">{{ error|trans({}, 'FOSUserBundle') }}</p>
-{% endif %}
 
- <form action="{{ path("fos_user_security_check") }}" class="form_default form_horizontal" method="post" novalidate>
-  <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-  <fieldset>
-    <div class="line">
-      <label>E-mail</label>
-      <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="email"/>
+
+{% extends "BtnUserBundle::layout.html.twig" %}
+{% block body %}
+
+<div class="wrap group">
+    <div class="inner-container group">
+        <div class="box-hold group">
+            <div class="box">
+                <div class="box-content">
+                    <header class="title">
+                      <h1>Login</h1>
+                    </header>
+                    <section role="login">
+                      {% if error %}
+                          <p class="msg_error">{{ error|trans({}, 'FOSUserBundle') }}</p>
+                      {% endif %}
+                       <form action="{{ path("fos_user_security_check") }}" class="form_default form_horizontal" method="post" novalidate>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                        <fieldset>
+                          <div class="line">
+                            <label>Login</label>
+                          </div>
+                          <div class="line">
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Login"/>
+                          </div>
+                          <div class="line">
+                            <label>Password</label>
+                          </div>
+                          <div class="line">
+                            <input type="password" id="password" name="_password" placeholder="Password"/>
+                          </div>
+                          <button class="btn primary" id="_submit" name="_submit" type="submit">Login</button>
+                      </fieldset>
+                      </form>
+                    </section>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="line">
-      <label>Password</label>
-      <input type="password" id="password" name="_password" placeholder="Password"/>
-    </div>
-    <button class="btn primary" id="_submit" name="_submit" type="submit">Submit</button>
-</fieldset>
-</form>
+</div>
+
+{% endblock body %}
